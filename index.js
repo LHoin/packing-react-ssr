@@ -1,6 +1,6 @@
-import path from 'path';
-import fs from 'fs';
-import packingGlob from 'packing-glob';
+const path = require('path');
+const fs = require('fs');
+const packingGlob = require('packing-glob');
 
 function CopySsrPlugin({ sourcePath, destPath }) {
   this.sourcePath = sourcePath;
@@ -44,7 +44,7 @@ const handleCfg = (appConfig, webpackConfig) => {
   }, customCfg)
 };
 
-export const commonConfig = (cfg, webpackConfig/* , program, appConfig */) => {
+const commonConfig = (cfg, webpackConfig/* , program, appConfig */) => {
   const {
     entry,
     ssrEntryFileName,
@@ -73,7 +73,7 @@ export const commonConfig = (cfg, webpackConfig/* , program, appConfig */) => {
   return ssrConfig;
 }
 
-export const buildConfig = (webpackConfig, program, appConfig, ...args) => {
+const buildConfig = (webpackConfig, program, appConfig, ...args) => {
   const cfg = handleCfg(appConfig, webpackConfig);
   const ssrConfig = commonConfig(cfg, webpackConfig, program, appConfig, ...args);
   ssrConfig.plugins.push(new CopySsrPlugin({
@@ -84,11 +84,17 @@ export const buildConfig = (webpackConfig, program, appConfig, ...args) => {
   return [webpackConfig, ssrConfig];
 };
 
-export const serveConfig = (webpackConfig, program, appConfig, ...args) => {
+const serveConfig = (webpackConfig, program, appConfig, ...args) => {
   const cfg = handleCfg(appConfig, webpackConfig);
   const ssrConfig = commonConfig(cfg, webpackConfig, program, appConfig, ...args);
   ssrConfig.output.path = cfg.serveOutputPath; 
   const result = [webpackConfig, ssrConfig];
   result.output = webpackConfig.output;
   return result;
+};
+
+module.exports = {
+  commonConfig,
+  buildConfig,
+  serveConfig
 };

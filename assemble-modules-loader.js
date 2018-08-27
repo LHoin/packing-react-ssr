@@ -1,6 +1,6 @@
-import { getOptions } from 'loader-utils';
+const { getOptions } = require('loader-utils');
 
-export default function loader(source) {
+module.exports = function loader(source) {
   const options = getOptions(this);
   const { moduleFiles } = options;
   const codeLines = moduleFiles.map((file) => {
