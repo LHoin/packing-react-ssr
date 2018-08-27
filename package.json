@@ -1,0 +1,19 @@
+{
+  "name": "packing-react-ssr",
+  "version": "0.0.0",
+  "description": "针对packing react ssr配置工具库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LHoin/packing-react-ssr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LHoin/packing-react-ssr/issues"
+  },
+  "homepage": "https://github.com/LHoin/packing-react-ssr#readme"
+}
