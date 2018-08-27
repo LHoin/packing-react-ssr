@@ -1,6 +1,6 @@
 {
   "name": "packing-react-ssr",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "description": "针对packing react ssr配置工具库",
   "main": "index.js",
   "scripts": {
