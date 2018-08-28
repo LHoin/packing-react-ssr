@@ -1,10 +1,12 @@
 # packing-react-ssr
-针对[packing](https://github.com/packingjs/packing)的react ssr配置工具库
+针对[packing](https://github.com/packingjs/packing)的react ssr配置工具库；
 
-## 实现机制
 packing基于webpack实现，packing本身只生成一个webpack配置用于打包编译，输出产物为打包后的js/css/模板文件；
+
 为了支持ReactSSR，需要生成一个ssr的node包，供服务用来生成html；
+
 packing-react-ssr在packing配置文件引用，在packing原有打包配置的基础上，再生成一套ReactSSR配置；
+
 packing使用两套配置，进行两次编译，从而在原用产物的基础上再增加ssr的相关产物；
 
 ## 使用方法
