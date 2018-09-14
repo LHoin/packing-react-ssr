@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/LHoin/packing-react-ssr/issues"
   },
-  "homepage": "https://github.com/LHoin/packing-react-ssr#readme"
+  "homepage": "https://github.com/LHoin/packing-react-ssr#readme",
+  "dependencies": {
+    "clone": "^2.1.2",
+    "ignore-loader": "^0.1.2"
+  }
 }
